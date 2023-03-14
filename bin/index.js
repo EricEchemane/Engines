@@ -9,5 +9,7 @@ yargs(hideBin(process.argv))
     console.log('ENGINES');
 })
     .command(CreateCommand.command, CreateCommand.description, CreateCommand.builder, CreateCommand.handler)
+    .alias('h', 'hooks')
+    .describe('h', 'Generate react-query hooks for each endpoint')
     .alias('v', 'version')
     .help().argv;

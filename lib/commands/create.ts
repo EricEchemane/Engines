@@ -1,5 +1,5 @@
 import yargs from 'yargs';
-import { Logger, scaffold } from '../utils/index.js';
+import { Logger, scaffold, totTitleCase } from '../utils/index.js';
 import {
 	currentWorkingDirectory,
 	getDestinationPaths,
@@ -46,7 +46,6 @@ export default class CreateCommand {
 		}
 
 		currentWorkingDirectory(`${engines}/${lowerCaseEngineName}`).create();
-		//currentWorkingDirectory(`${engines}/${lowerCaseEngineName}/hooks`).create();
 		currentWorkingDirectory(apiFolder).create();
 		Logger.info(`${apiFolder} folder created`);
 
@@ -60,42 +59,41 @@ export default class CreateCommand {
 			DESTINATION_FILES.handler,
 			lowerCaseEngineName
 		);
-		//scaffold(
-		//	SOURCE_FILES.hooks.all,
-		//	DESTINATION_FILES.hooks.all,
-		//	lowerCaseEngineName
-		//);
-		//scaffold(
-		//	SOURCE_FILES.hooks.create,
-		//	DESTINATION_FILES.hooks.create,
-		//	lowerCaseEngineName
-		//);
-		//scaffold(
-		//	SOURCE_FILES.hooks.get,
-		//	DESTINATION_FILES.hooks.get,
-		//	lowerCaseEngineName
-		//);
-		//scaffold(
-		//	SOURCE_FILES.hooks.update,
-		//	DESTINATION_FILES.hooks.update,
-		//	lowerCaseEngineName
-		//);
-		//scaffold(
-		//	SOURCE_FILES.hooks.index,
-		//	DESTINATION_FILES.hooks.index,
-		//	lowerCaseEngineName
-		//);
 
-		//if (argv.h) {
-		//	Logger.info(`Generating react-query hooks`);
-		//	fs.mkdirSync(currentDir + `/src/engines/${routeName}/hooks`);
-		//	scaffold(
-		//		SOURCE_FILES.hooks.getAll,
-		//		DESTINATION_FILES.hooks.getAll,
-		//		routeName
-		//	);
-		//}
+		if (argv.h) {
+			Logger.info(`Generating react-query hooks`);
 
-		//Logger.success(`${routeNameTitleCase} Engine created`);
+			currentWorkingDirectory(
+				`${engines}/${lowerCaseEngineName}/hooks`
+			).create();
+
+			scaffold(
+				SOURCE_FILES.hooks.all,
+				DESTINATION_FILES.hooks.all,
+				lowerCaseEngineName
+			);
+			scaffold(
+				SOURCE_FILES.hooks.create,
+				DESTINATION_FILES.hooks.create,
+				lowerCaseEngineName
+			);
+			scaffold(
+				SOURCE_FILES.hooks.get,
+				DESTINATION_FILES.hooks.get,
+				lowerCaseEngineName
+			);
+			scaffold(
+				SOURCE_FILES.hooks.update,
+				DESTINATION_FILES.hooks.update,
+				lowerCaseEngineName
+			);
+			scaffold(
+				SOURCE_FILES.hooks.index,
+				DESTINATION_FILES.hooks.index,
+				lowerCaseEngineName
+			);
+		}
+
+		Logger.success(`${totTitleCase(engineName)} Engine created`);
 	}
 }

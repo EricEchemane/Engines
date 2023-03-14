@@ -21,5 +21,7 @@ yargs(hideBin(process.argv))
 		CreateCommand.builder,
 		CreateCommand.handler
 	)
+	.alias('h', 'hooks')
+	.describe('h', 'Generate react-query hooks for each endpoint')
 	.alias('v', 'version')
 	.help().argv;
