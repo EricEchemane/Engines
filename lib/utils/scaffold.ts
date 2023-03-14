@@ -41,3 +41,27 @@ export function scaffold(
 		});
 	});
 }
+
+export function createGuard(
+	source: string,
+	destination: string,
+	guardName: string
+) {
+	// creates the destination file with empty content
+	fs.writeFile(destination, '', (err) => {
+		if (err) throw err;
+	});
+
+	// reads the content of the template file
+	fs.readFile(source, 'utf8', (err, data) => {
+		if (err) throw err;
+
+		// replace the dynamic lowercase engine name
+		let replacedData = data.replace(/AuthGuard/g, guardName);
+
+		// write the new content to the destination
+		fs.writeFile(destination, replacedData, (err) => {
+			if (err) throw err;
+		});
+	});
+}

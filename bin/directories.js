@@ -22,6 +22,7 @@ export function getDestinationPaths(engineName) {
     const EngineName = totTitleCase(engineName);
     return {
         dto: CWD + `/src/engines/${engineName}/${engineName}.dto.ts`,
+        guard: CWD + `/src/engines/guards/${engineName}.guard.ts`,
         hooks: {
             index: CWD + `/src/engines/${engineName}/hooks/index.ts`,
             create: CWD + `/src/engines/${engineName}/hooks/useCreate${EngineName}.ts`,
@@ -34,7 +35,7 @@ export function getDestinationPaths(engineName) {
 }
 export const SOURCE_FILES = {
     dto: DIRNAME + '/template/engines/product/product.dto.ts',
-    //guard: DIRNAME + '/template/engines/product/guards/auth.guard.ts',
+    guard: DIRNAME + '/template/engines/product/guards/auth.guard.ts',
     hooks: {
         index: DIRNAME + `/template/engines/product/hooks/index.ts`,
         create: DIRNAME + `/template/engines/product/hooks/useCreateProduct.ts`,
