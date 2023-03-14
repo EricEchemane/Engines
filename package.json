@@ -1,0 +1,44 @@
+{
+	"name": "engines",
+	"version": "0.1.1",
+	"type": "module",
+	"description": "Scaffolds NextJs API Route handlers in NestJs-like structure with react-query integration. Generate controllers, validation, DTOs and hooks.",
+	"main": "bin/index.js",
+	"bin": {
+		"engine": "bin/index.js"
+	},
+	"scripts": {
+		"build": "rm bin src -rf && mkdir src src\\pages src\\pages\\api && tsc-esm && mkdir bin\\template && cp lib\\template bin -r"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/EricEchemane/Engines.git"
+	},
+	"keywords": [
+		"NextJs",
+		"class-validator",
+		"class-transformer",
+		"next-api-decorators",
+		"react-query"
+	],
+	"author": "Eric Echemane",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/EricEchemane/Engines/issues"
+	},
+	"homepage": "https://github.com/EricEchemane/Engines#readme",
+	"dependencies": {
+		"chalk": "^5.2.0",
+		"yargs": "^17.7.1"
+	},
+	"devDependencies": {
+		"@digitak/tsc-esm": "^3.1.4",
+		"@tanstack/react-query": "^4.26.1",
+		"@types/node": "^18.15.1",
+		"@types/yargs": "^17.0.22",
+		"class-transformer": "^0.5.1",
+		"class-validator": "^0.14.0",
+		"next-api-decorators": "^2.0.2",
+		"typescript": "^5.1.0-dev.20230313"
+	}
+}
