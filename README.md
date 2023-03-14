@@ -45,3 +45,14 @@ example:
 ```
 engine create product -h
 ```
+
+### `engine guard <name>`
+
+Generates next-api-decorator guard.
+example:
+
+```
+engine guard auth
+```
+
+This will generate `AuthGuard` inside src/engines/guards
