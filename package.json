@@ -8,7 +8,7 @@
 		"engine": "bin/index.js"
 	},
 	"scripts": {
-		"build": "rm bin src -rf && mkdir src src\\pages src\\pages\\api && tsc-esm && mkdir bin\\template && cp lib\\template bin -r"
+		"build": "rm bin src -rf && mkdir src src\\pages src\\pages\\api && tsc && mkdir bin\\template && cp lib\\template bin -r"
 	},
 	"repository": {
 		"type": "git",

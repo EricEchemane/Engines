@@ -1,5 +1,5 @@
-export * from './logger';
-export * from './scaffold';
+export * from './logger.js';
+export * from './scaffold.js';
 
 export function totTitleCase(s: string) {
 	const lower = s.toLowerCase();

@@ -1,10 +1,10 @@
 import yargs from 'yargs';
-import { Logger, totTitleCase, scaffold } from '../utils';
+import { Logger, scaffold } from '../utils/index.js';
 import {
 	currentWorkingDirectory,
 	getDestinationPaths,
 	SOURCE_FILES,
-} from '../directories';
+} from '../directories.js';
 
 export default class CreateCommand {
 	public static command: string = 'create [engine-name]';

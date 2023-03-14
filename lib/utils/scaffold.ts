@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { totTitleCase } from './index';
+import { totTitleCase } from './index.js';
 
 /**
  *
@@ -27,17 +27,17 @@ export function scaffold(
 		// write the new content to the destination
 		fs.writeFile(destination, replacedData, (err) => {
 			if (err) throw err;
-		});
 
-		// replace the dynamic titlecase engine name
-		replacedData = replacedData.replace(
-			/Product/g,
-			totTitleCase(routeName.toLowerCase())
-		);
+			// replace the dynamic titlecase engine name
+			replacedData = replacedData.replace(
+				/Product/g,
+				totTitleCase(routeName.toLowerCase())
+			);
 
-		// write the new content to the destination
-		fs.writeFile(destination, replacedData, (err) => {
-			if (err) throw err;
+			// write the new content to the destination
+			fs.writeFile(destination, replacedData, (err) => {
+				if (err) throw err;
+			});
 		});
 	});
 }

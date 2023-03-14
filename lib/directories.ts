@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
-import { totTitleCase } from './utils/index';
+import { totTitleCase } from './utils/index.js';
 
 export const DIRNAME = path.dirname(fileURLToPath(import.meta.url));
 export const CWD = process.cwd();

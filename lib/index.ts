@@ -2,7 +2,7 @@
 
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import CreateCommand from './commands/create';
+import CreateCommand from './commands/create.js';
 
 yargs(hideBin(process.argv))
 	.scriptName('engine')
