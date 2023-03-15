@@ -7,7 +7,7 @@ Scaffolds NextJs API Route handlers in NestJs-like structure with react-query in
 1. install globally in your system
 
 ```
-npm i @echemane/engines
+npm i -g @echemane/engines
 ```
 
 2. Install dependencies inside your current working directory
