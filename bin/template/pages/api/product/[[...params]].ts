@@ -10,7 +10,7 @@ import {
 
 import {
 	CreateProductDto,
-	type UpdateProductDto,
+	UpdateProductDto,
 } from '../../../engines/product/product.dto';
 
 class Product {
