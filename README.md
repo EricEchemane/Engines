@@ -17,12 +17,13 @@ npm i next-api-decorators class-validator class-transformer path-to-regexp @tans
 ```
 
 3. Setup your QueryClientProvider. See [@tanstack/react-query docs]()
-4. Set `"experimentalDecorators": true,` in `tsconfig.json`
+4. Set `"experimentalDecorators": true,` and `"emitDecoratorMetadata": true` in `tsconfig.json`
 
 ```json
 {
 	"compilerOptions": {
 		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
 		...
 	},
 }
