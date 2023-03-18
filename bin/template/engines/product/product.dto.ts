@@ -5,4 +5,4 @@ export class CreateProductDto {
 	property!: string;
 }
 
-export type UpdateProductDto = Partial<CreateProductDto>;
+export class UpdateProductDto implements Partial<CreateProductDto> {}
